@@ -1,0 +1,165 @@
+@if (!isLoading) {
+    @if (page=="search") {
+        <div class="search-filters-container">
+            <div class="filters-container">
+                <div class="filters-container-header">
+                    
+                </div>
+                <div class="filters-container-body">
+                    
+                    <div class="filters-container-title">
+                        <span></span>
+                    </div>
+                    <div class="filters-container-input">
+                         <!-- Only show filters if `isLumber` is true -->
+                         <h4>Filters heading</h4>
+                    
+                         <!-- <select [(ngModel)]="selectedOption" (change)="onSelectChange()" class="filter-input">
+                             <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+                         </select> -->
+                         <mat-form-field>
+                             <mat-label>Category</mat-label>
+                             <mat-select [(ngModel)]="selectedOption" (selectionChange)="onSelectChange()">
+                               @for (option of options; track option) {
+                                 <mat-option [value]="option">{{option}}</mat-option>
+                               }
+                             </mat-select>
+                           </mat-form-field>
+                        <div *ngIf="isLumber">
+                            <form [formGroup]="filterForm"><br>
+                                @for (item of inputFilters; track $index) {
+                                    @if(item.fieldType=="slider"){
+                                        <legend style="color: gray;font-size: small;">{{item.field}}</legend>
+                                        <!-- <div style="display: flex; align-items: center;">
+                                            <span style="margin-right: 10px;">{{item.min}}</span>
+                                        
+                                        <input type="range" min=item.min max=item.max avg=item.avg class="filter-input" formControlName={{item.field}} (input)="onSliderChange($event.target.value)">
+                                        <span style="margin-left: 10px;">{{item.max}}</span> -->
+
+                                        <mat-slider>
+                                            <input matSliderStartThumb value="20" min=item.min max=item.max>
+                                            <input matSliderEndThumb value="80" min=item.min max=item.max>
+                                        </mat-slider>
+                                        
+                                        <!-- </div> -->
+                                    }
+                                    @else if (item.fieldType=="dropdown") {
+                                        <!-- <legend style="color: gray;font-size: small;">{{item.field}}</legend>
+                                        <select class="filter-input" formControlName="{{ item.field }}" (change)="onFiltersSearch()">
+                                            <option disabled selected>Select</option>
+                                            <option *ngFor="let option of item.values" [value]="option">{{option}}</option>
+                                        </select> -->
+
+                                        <mat-form-field>
+                                            <mat-label>{{item.field}}</mat-label>
+                                            <mat-select formControlName="{{ item.field }}" (selectionChange)="onFiltersSearch()">
+                                              @for (option of item.values; track option) {
+                                                <mat-option [value]="option">{{option}}</mat-option>
+                                              }
+                                            </mat-select>
+                                          </mat-form-field> 
+                                    }
+                                }
+                                <!-- <input *ngFor="let attribute of IdentifyingAttributes.Lumber"
+                                type=""
+                                [placeholder]="attribute.charAt(0).toUpperCase() + attribute.slice(1)"
+                                class="filter-input" [formControlName]="attribute" (change)="onCategoryChange()"> -->   
+                            </form>   
+                            <!-- <button type="button" *ngIf="isLumber||isSheetGood" [disabled]="isLoad"  class="filter-input" (click)="onSearch()">Submit</button>  -->
+                        </div>
+                        <div *ngIf="isSheetGood">
+                            <form [formGroup]="SheetGoodfilterForm">
+                                @for (item of inputFiltersSheetGood; track $index) {
+                                    @if(item.fieldType=="slider"){
+                                        <legend style="color: gray;font-size: small;">{{item.field}}</legend>
+                                        <!-- <div style="display: flex; align-items: center;">
+                                            <span style="margin-right: 10px;">{{item.min}}</span>
+                                        
+                                        <input type="range" min=item.min max=item.max avg=item.avg class="filter-input" formControlName={{item.field}} (input)="onSliderChange($event.target.value)">
+                                        <span style="margin-left: 10px;">{{item.max}}</span>
+                                        
+                                        </div> -->
+        
+                                        <mat-slider>
+                                            <input matSliderStartThumb value="20" min=item.min max=item.max>
+                                            <input matSliderEndThumb value="80" min=item.min max=item.max>
+                                        </mat-slider>
+                                    }
+                                    @else if (item.fieldType=="dropdown") {
+                                        <!-- <legend style="color: gray;font-size: small;">{{item.field}}</legend>
+                                        <select class="filter-input" formControlName="{{ item.field }}" (change)="onFiltersSearch()">
+                                            <option disabled selected>Select</option>
+                                            <option *ngFor="let option of item.values" [value]="option">{{option}}</option>
+                                        </select> -->
+        
+                                        <mat-form-field>
+                                            <mat-label>{{item.field}}</mat-label>
+                                            <mat-select formControlName="{{ item.field }}" (selectionChange)="onFiltersSearch()">
+                                              @for (option of item.values; track option) {
+                                                <mat-option [value]="option">{{option}}</mat-option>
+                                              }
+                                            </mat-select>
+                                          </mat-form-field> 
+                                    }
+                                }
+                            </form>   
+                        </div>
+                    </div>
+                </div>            
+                
+               
+            </div>
+            <div class="search-container">
+                
+                <div class="nav container"><center>
+                <h1>Search All Products</h1>
+                <form [formGroup]="searchForm" (submit)="searchProducts($event)" class="search-form">
+                    <button type="submit" class="clickable" (click)="onSearch()"><mat-icon>search</mat-icon></button>
+                    <input 
+                        type="text" 
+                        [(ngModel)]="searchTerm" 
+                        name="searchTerm" 
+                        placeholder="Search for products"
+                        autocomplete="off" formControlName="searchInput">
+                </form>
+                <app-loading *ngIf="isLoad"></app-loading>
+                <div class="page-cards">
+                @for (card of cards; track card.id) {
+                    <div class="card clickable" (click)="router.navigate([card.link])">
+                        <h2>{{ card.title }}</h2>
+                        <img [src]="'assets/images/' + card.image + '.jpg'" alt="{{ card.title }}">
+                        <p>{{ card.subtitle }}</p>
+                    </div>
+                }
+                </div>
+                <app-pagination *ngIf="isDataFetched" [currentPage]="currentPage" [limit]="limit" [total]="total" (changePage)="changePage($event)"></app-pagination>
+            </center>
+            </div>
+            </div>
+        </div>
+        
+    }
+    <div class="nav container">
+        @if (page=="search") {
+            
+            
+        } @else if (page == "nav") {
+            <h1>{{ title }}</h1>
+            <div class="page-cards">
+                @for (card of cards; track card.id) {
+                    <div class="card clickable" (click)="router.navigate([card.link])">
+                        <h2>{{ card.title }}</h2>
+                        <img [src]="'assets/images/' + card.image + '.jpg'" alt="{{ card.title }}">
+                        <p>{{ card.subtitle }}</p>
+                    </div>    }
+                </div>
+                <app-pagination *ngIf="isDataFetched" [currentPage]="currentPage" [limit]="limit" [total]="total" (changePage)="changePage($event)"></app-pagination>
+        }
+        @if (filters) {
+            
+        }
+        
+    </div>
+} @else {
+    <app-loading></app-loading>
+}

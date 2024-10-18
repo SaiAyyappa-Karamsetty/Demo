@@ -1,0 +1,162 @@
+@import '../../styles/variables.scss';
+
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-form button {
+    background-color: $primary-color-light;
+    color: $secondary-logo-color;
+    border: none;
+    padding: 7px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.5s ease;
+    border-radius: 4px;
+}
+
+.search-form button:hover {
+    background-color: $primary-color;
+}
+  
+.search-form input {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left: 6px;
+    width: 300px;
+}
+
+.page-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 300px;
+    text-align: center;
+    padding: 16px;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+    border-radius: 8px;
+}
+
+.card h2 {
+    font-size: 1.5em;
+    margin: 16px 0;
+}
+
+.card p {
+    font-size: 1em;
+    color: #777;
+    margin-bottom: 16px;
+}
+  
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border: 2px solid #bababa;
+}
+
+.search-filters-container {
+    height: 100%; /* Optional: Add margin */
+    width: 100%;
+}
+
+.filters-container {
+    width: 20%;
+    height: 100%;
+    float: left;
+    margin-left: 2.5%;
+    margin-top: 5%;
+    background-color: #fff;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filters-container-header {
+    height: 20%;
+    width: 100%;
+}
+
+.filters-container-body {
+    height: 80%;
+    width: 100%;
+}
+
+.filters-container-title {
+    height: 80%;
+    width: 7%;
+    float: left;
+}
+
+.filters-container-input {
+    height: 100%;
+    width: 93%;
+    float: right;
+
+}
+
+.search-container {
+    width: 75%;
+    height: 100%;
+    float: right;
+}
+
+
+.option {
+    padding: 10px; /* Padding */
+    cursor: pointer; /* Pointer cursor */
+}
+
+.option:hover {
+    background-color: gray; /* Highlight on hover */
+}
+
+.options {
+    position: absolute; /* Absolute positioning */
+    top: 100%; /* Position below the select */
+    left: 0;
+    right: 0;
+    border: 1px solid #ccc; /* Border */
+    // background-color: #fff; /* Background color */
+    z-index: 1000; /* On top of other elements */
+}
+
+.selected-option {
+    padding: 10px; /* Padding */
+    font-size: 16px; /* Font size */
+    background-color: #fff; /* Background color */
+}
+
+.filter-input{
+    padding: 8px;
+    margin: 7px;
+    width: 60%;
+}
+  

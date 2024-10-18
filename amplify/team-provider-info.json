@@ -1,0 +1,81 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-tezbuild-dev-77a35-authRole",
+      "UnauthRoleArn": "arn:aws:iam::891377136298:role/amplify-tezbuild-dev-77a35-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::891377136298:role/amplify-tezbuild-dev-77a35-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-tezbuild-dev-77a35-deployment",
+      "UnauthRoleName": "amplify-tezbuild-dev-77a35-unauthRole",
+      "StackName": "amplify-tezbuild-dev-77a35",
+      "StackId": "arn:aws:cloudformation:us-east-1:891377136298:stack/amplify-tezbuild-dev-77a35/89effc60-3319-11ef-bc78-0affd2bc0531",
+      "AmplifyAppId": "d3jp8rf9ifvwqt",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-tezbuild-dev-77a35-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "function": {
+        "productspublic": {
+          "deploymentBucketName": "amplify-tezbuild-dev-77a35-deployment",
+          "s3Key": "amplify-builds/productspublic-6b4e396271697a706579-build.zip"
+        },
+        "productupload": {
+          "deploymentBucketName": "amplify-tezbuild-dev-77a35-deployment",
+          "s3Key": "amplify-builds/productupload-6d49512b575277362f49-build.zip"
+        },
+        "contentmanagement": {
+          "deploymentBucketName": "amplify-tezbuild-dev-77a35-deployment",
+          "s3Key": "amplify-builds/contentmanagement-46506c654f2f33543542-build.zip"
+        },
+        "navpublic": {
+          "deploymentBucketName": "amplify-tezbuild-dev-77a35-deployment",
+          "s3Key": "amplify-builds/navpublic-417a363553385833516c-build.zip"
+        },
+        "usermanagement": {
+          "deploymentBucketName": "amplify-tezbuild-dev-77a35-deployment",
+          "s3Key": "amplify-builds/usermanagement-43576451525376794231-build.zip"
+        },
+        "usermanagementauth": {
+          "deploymentBucketName": "amplify-tezbuild-dev-77a35-deployment",
+          "s3Key": "amplify-builds/usermanagementauth-37686b386666436c3936-build.zip"
+        },
+        "locationservice": {
+          "deploymentBucketName": "amplify-tezbuild-dev-77a35-deployment",
+          "s3Key": "amplify-builds/locationservice-3133494e3558524f562f-build.zip"
+        },
+        "pricingandshipping": {
+          "deploymentBucketName": "amplify-tezbuild-dev-77a35-deployment",
+          "s3Key": "amplify-builds/pricingandshipping-6442694f587765475453-build.zip"
+        },
+        "opensearch": {
+          "deploymentBucketName": "amplify-tezbuild-dev-77a35-deployment",
+          "s3Key": "amplify-builds/opensearch-386930526a3272537972-build.zip"
+        }
+      },
+      "auth": {
+        "tezbuild": {}
+      },
+      "storage": {
+        "TezBuildData": {},
+        "TezBuildDataBucket": {}
+      }
+    }
+  },
+  "master": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-tezbuild-master-671f5-authRole",
+      "UnauthRoleArn": "arn:aws:iam::891377136298:role/amplify-tezbuild-master-671f5-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::891377136298:role/amplify-tezbuild-master-671f5-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-tezbuild-master-671f5-deployment",
+      "UnauthRoleName": "amplify-tezbuild-master-671f5-unauthRole",
+      "StackName": "amplify-tezbuild-master-671f5",
+      "StackId": "arn:aws:cloudformation:us-east-1:891377136298:stack/amplify-tezbuild-master-671f5/29f89900-325d-11ef-bd35-0e8f86ebb945",
+      "AmplifyAppId": "d3jp8rf9ifvwqt"
+    },
+    "categories": {
+      "function": {
+        "testfunc": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "auth": {
+      "tezbuild": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    },
+    "storage": {
+      "TezBuildData": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}

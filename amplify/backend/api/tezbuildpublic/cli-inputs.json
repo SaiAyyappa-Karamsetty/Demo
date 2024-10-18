@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "paths": {
+    "/products": {
+      "name": "/products",
+      "lambdaFunction": "productspublic",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/nav": {
+      "name": "/nav",
+      "lambdaFunction": "navpublic",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/user": {
+      "name": "/user",
+      "lambdaFunction": "usermanagement",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/locate": {
+      "name": "/locate",
+      "lambdaFunction": "locationservice",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/pricing": {
+      "name": "/pricing",
+      "lambdaFunction": "pricingandshipping",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/user-auth": {
+      "name": "/user-auth",
+      "lambdaFunction": "usermanagementauth",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    }
+  }
+}

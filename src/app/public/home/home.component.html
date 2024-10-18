@@ -1,0 +1,38 @@
+<!-- Loader (if loading) -->
+<app-loading *ngIf="isLoading"></app-loading>
+
+<!-- Main Content (if not loading) -->
+<div *ngIf="!isLoading" class="home-container">
+  <!-- <div class="search-container"> -->
+                
+    <div class="nav container"><center>
+    <h1 *ngIf="page !== 'search'">{{ title }}</h1>
+    <h2>Search All Products</h2>
+    <form [formGroup]="searchForm" (submit)="searchProducts($event)" class="search-form">
+        <button type="submit" class="clickable" (click)="onSearch()"><mat-icon>search</mat-icon></button>
+        <input 
+            type="text" 
+            [(ngModel)]="searchTerm" 
+            name="searchTerm" 
+            placeholder="Search for products"
+            autocomplete="off" formControlName="searchInput">
+    </form>
+    <app-loading *ngIf="isLoad"></app-loading>
+    <div class="page-cards">
+    @for (card of cards; track card.id) {
+        <div class="card clickable" (click)="router.navigate([card.link])">
+            <h2>{{ card.title }}</h2>
+            <img [src]="'assets/images/' + card.image + '.jpg'" alt="{{ card.title }}">
+            <p>{{ card.subtitle }}</p>
+        </div>
+    }
+    </div>
+    <app-pagination *ngIf="isDataFetched" [currentPage]="currentPage" [limit]="limit" [total]="total" (changePage)="changePage($event)"></app-pagination>
+</center>
+</div>
+<!-- </div> -->
+
+
+
+
+

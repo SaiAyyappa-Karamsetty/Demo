@@ -1,0 +1,375 @@
+{
+  "api": {
+    "tezbuildpublic": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "productspublic"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "navpublic"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "usermanagement"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "locationservice"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "pricingandshipping"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "usermanagementauth"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "auth": {
+    "tezbuild": {
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "serviceType": "managed"
+    }
+  },
+  "function": {
+    "contentmanagement": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "TezBuildData"
+        },
+        {
+          "attributes": [
+            "BucketName"
+          ],
+          "category": "storage",
+          "resourceName": "TezBuildDataBucket"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "locationservice": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "navpublic": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "TezBuildData"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "opensearch": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "TezBuildData"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "pricingandshipping": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "productspublic": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "TezBuildData"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "productupload": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "TezBuildData"
+        },
+        {
+          "attributes": [
+            "BucketName"
+          ],
+          "category": "storage",
+          "resourceName": "TezBuildDataBucket"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "usermanagement": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "tezbuild"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "TezBuildData"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "usermanagementauth": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_contentmanagement_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "contentmanagement"
+        }
+      ]
+    },
+    "AMPLIFY_function_contentmanagement_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "contentmanagement"
+        }
+      ]
+    },
+    "AMPLIFY_function_locationservice_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "locationservice"
+        }
+      ]
+    },
+    "AMPLIFY_function_locationservice_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "locationservice"
+        }
+      ]
+    },
+    "AMPLIFY_function_navpublic_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "navpublic"
+        }
+      ]
+    },
+    "AMPLIFY_function_navpublic_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "navpublic"
+        }
+      ]
+    },
+    "AMPLIFY_function_opensearch_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "opensearch"
+        }
+      ]
+    },
+    "AMPLIFY_function_opensearch_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "opensearch"
+        }
+      ]
+    },
+    "AMPLIFY_function_pricingandshipping_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "pricingandshipping"
+        }
+      ]
+    },
+    "AMPLIFY_function_pricingandshipping_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "pricingandshipping"
+        }
+      ]
+    },
+    "AMPLIFY_function_productspublic_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "productspublic"
+        }
+      ]
+    },
+    "AMPLIFY_function_productspublic_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "productspublic"
+        }
+      ]
+    },
+    "AMPLIFY_function_productupload_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "productupload"
+        }
+      ]
+    },
+    "AMPLIFY_function_productupload_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "productupload"
+        }
+      ]
+    },
+    "AMPLIFY_function_usermanagement_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "usermanagement"
+        }
+      ]
+    },
+    "AMPLIFY_function_usermanagement_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "usermanagement"
+        }
+      ]
+    },
+    "AMPLIFY_function_usermanagementauth_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "usermanagementauth"
+        }
+      ]
+    },
+    "AMPLIFY_function_usermanagementauth_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "usermanagementauth"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "TezBuildData": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    },
+    "TezBuildDataBucket": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
+    }
+  }
+}

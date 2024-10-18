@@ -126,6 +126,11 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
+    "opensearch": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "pricingandshipping": {
       "build": true,
       "providerPlugin": "awscloudformation",

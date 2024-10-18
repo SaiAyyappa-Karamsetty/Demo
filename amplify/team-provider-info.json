@@ -105,7 +105,8 @@
         "usermanagementauth": {},
         "TezBuildData": {},
         "TezBuildDataBucket": {},
-        "tezbuild": {}
+        "tezbuild": {},
+        "opensearch": {}
       }
     }
   }

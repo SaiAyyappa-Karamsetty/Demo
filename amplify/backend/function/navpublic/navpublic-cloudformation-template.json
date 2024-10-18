@@ -93,7 +93,7 @@
             },
             "OPENSEARCHENDPOINT": {
               "Fn::ImportValue": {
-                "Fn::Sub": "tezbuildopensearch-DomainEndpoint"
+                "Fn::Sub": "opensearch-DomainEndpoint"
               }
             }
           }

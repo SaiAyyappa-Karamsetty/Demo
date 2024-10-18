@@ -128,17 +128,6 @@
     },
     "opensearch": {
       "build": true,
-      "dependsOn": [
-        {
-          "attributes": [
-            "Name",
-            "Arn",
-            "StreamArn"
-          ],
-          "category": "storage",
-          "resourceName": "TezBuildData"
-        }
-      ],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
@@ -183,11 +172,6 @@
           "resourceName": "TezBuildDataBucket"
         }
       ],
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "searchnew": {
-      "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },

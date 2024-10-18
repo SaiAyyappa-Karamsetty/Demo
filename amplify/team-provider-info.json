@@ -98,7 +98,6 @@
         "contentmanagement": {},
         "locationservice": {},
         "navpublic": {},
-        "opensearch": {},
         "pricingandshipping": {},
         "productspublic": {},
         "productupload": {},
@@ -107,7 +106,7 @@
         "TezBuildData": {},
         "TezBuildDataBucket": {},
         "tezbuild": {},
-        "searchnew": {}
+        "opensearch": {}
       }
     }
   }

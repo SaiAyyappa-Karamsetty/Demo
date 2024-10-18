@@ -76,7 +76,7 @@
               },
               "OPENSEARCHENDPOINT": {
                 "Fn::ImportValue": {
-                  "Fn::Sub": "tezbuildopensearch-DomainEndpoint"
+                  "Fn::Sub": "opensearch-DomainEndpoint"
                 }
               },
               "STORAGE_TEZBUILDDATA_NAME": {
@@ -155,7 +155,7 @@
                     ],
                     "Resource": {
                       "Fn::ImportValue": {
-                        "Fn::Sub": "tezbuildopensearch-Domainarn"
+                        "Fn::Sub": "opensearch-DomainArn"
                       }
                     }
                   },

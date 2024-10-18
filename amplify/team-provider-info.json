@@ -77,5 +77,38 @@
         "testfunc": {}
       }
     }
+  },
+  "demo": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-tezbuild-demo-166aa-authRole",
+      "UnauthRoleArn": "arn:aws:iam::324037281461:role/amplify-tezbuild-demo-166aa-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::324037281461:role/amplify-tezbuild-demo-166aa-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-tezbuild-demo-166aa-deployment",
+      "UnauthRoleName": "amplify-tezbuild-demo-166aa-unauthRole",
+      "StackName": "amplify-tezbuild-demo-166aa",
+      "StackId": "arn:aws:cloudformation:us-east-1:324037281461:stack/amplify-tezbuild-demo-166aa/809df080-8d4c-11ef-84fd-1211c73561e3",
+      "AmplifyAppId": "d2crhhwdqp1ro4"
+    },
+    "categories": {
+      "auth": {
+        "tezbuild": {}
+      },
+      "function": {
+        "contentmanagement": {},
+        "locationservice": {},
+        "navpublic": {},
+        "opensearch": {},
+        "pricingandshipping": {},
+        "productspublic": {},
+        "productupload": {},
+        "usermanagement": {},
+        "usermanagementauth": {},
+        "TezBuildData": {},
+        "TezBuildDataBucket": {},
+        "tezbuild": {},
+        "searchnew": {}
+      }
+    }
   }
 }

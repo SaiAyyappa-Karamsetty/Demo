@@ -186,6 +186,11 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
+    "searchnew": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "usermanagement": {
       "build": true,
       "dependsOn": [
@@ -213,152 +218,6 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
-    }
-  },
-  "parameters": {
-    "AMPLIFY_function_contentmanagement_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "contentmanagement"
-        }
-      ]
-    },
-    "AMPLIFY_function_contentmanagement_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "contentmanagement"
-        }
-      ]
-    },
-    "AMPLIFY_function_locationservice_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "locationservice"
-        }
-      ]
-    },
-    "AMPLIFY_function_locationservice_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "locationservice"
-        }
-      ]
-    },
-    "AMPLIFY_function_navpublic_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "navpublic"
-        }
-      ]
-    },
-    "AMPLIFY_function_navpublic_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "navpublic"
-        }
-      ]
-    },
-    "AMPLIFY_function_opensearch_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "opensearch"
-        }
-      ]
-    },
-    "AMPLIFY_function_opensearch_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "opensearch"
-        }
-      ]
-    },
-    "AMPLIFY_function_pricingandshipping_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "pricingandshipping"
-        }
-      ]
-    },
-    "AMPLIFY_function_pricingandshipping_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "pricingandshipping"
-        }
-      ]
-    },
-    "AMPLIFY_function_productspublic_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "productspublic"
-        }
-      ]
-    },
-    "AMPLIFY_function_productspublic_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "productspublic"
-        }
-      ]
-    },
-    "AMPLIFY_function_productupload_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "productupload"
-        }
-      ]
-    },
-    "AMPLIFY_function_productupload_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "productupload"
-        }
-      ]
-    },
-    "AMPLIFY_function_usermanagement_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "usermanagement"
-        }
-      ]
-    },
-    "AMPLIFY_function_usermanagement_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "usermanagement"
-        }
-      ]
-    },
-    "AMPLIFY_function_usermanagementauth_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "usermanagementauth"
-        }
-      ]
-    },
-    "AMPLIFY_function_usermanagementauth_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "usermanagementauth"
-        }
-      ]
     }
   },
   "storage": {
